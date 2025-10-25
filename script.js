@@ -1,4 +1,3 @@
-// Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -6,7 +5,6 @@ menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-// Smooth Scrolling for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -21,7 +19,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Active Navigation Link
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -44,7 +41,6 @@ function highlightNavLink() {
     });
 }
 
-// Scroll Progress Bar
 function updateScrollProgress() {
     const scrollTop = window.pageYOffset;
     const docHeight = document.body.offsetHeight - window.innerHeight;
@@ -52,7 +48,6 @@ function updateScrollProgress() {
     document.querySelector('.scroll-progress').style.width = scrollPercent + '%';
 }
 
-// Fade In Animation
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -70,7 +65,6 @@ document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
 
-// Header Background on Scroll
 const header = document.querySelector('.header');
 function updateHeader() {
     if (window.scrollY > 50) {
@@ -82,7 +76,6 @@ function updateHeader() {
     }
 }
 
-// Event Listeners
 window.addEventListener('scroll', () => {
     highlightNavLink();
     updateScrollProgress();
@@ -94,7 +87,6 @@ window.addEventListener('load', () => {
     updateScrollProgress();
 });
 
-// Typing Animation for Hero
 const subtitle = document.querySelector('.subtitle');
 const titles = ['Full Stack Developer', 'Data Enthusiast', 'Problem Solver', 'Tech Innovator'];
 let titleIndex = 0;
@@ -110,10 +102,8 @@ function typeTitle() {
     }, 300);
 }
 
-// Start typing animation
 setInterval(typeTitle, 3000);
 
-// Add some interactive elements
 document.querySelectorAll('.skill-card').forEach(card => {
     card.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-10px) rotateX(5deg)';
@@ -124,7 +114,6 @@ document.querySelectorAll('.skill-card').forEach(card => {
     });
 });
 
-// Parallax effect for hero avatar
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const parallax = document.querySelector('.hero-avatar');
@@ -132,4 +121,5 @@ window.addEventListener('scroll', () => {
         const speed = scrolled * 0.5;
         parallax.style.transform = `translateY(${speed}px)`;
     }
+
 });
